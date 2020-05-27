@@ -1,31 +1,41 @@
 *{
 	padding: 0;
-	margin: 0;
+	margin: 1.22%;
 	box-sizing: border-box;
 }
 body{
 	height: 100vh;
 	display: flex;
-	background: orange;
+	background: maroon;
 }
 .memory-game{
-	width: 640px;
-	height: 640px;
+	width: 800px;
+	height: 800px;
 	margin: auto;
 	display: flex;
 	flex-wrap: wrap;
+	flex-shrink: 10 1 200px;
+	align-items: center;
+	justify-content: center;
+
+
+	/*display: grid;
+    height: 100px;*/
 	perspective: 1000px;
 
 }
 .memory-card{
-	width: calc(25% - 10px);
-  	height: calc(33.333% - 10px);
-	margin: 5px;
+	width: calc(25% - 170px);
+  	height: calc(33.333% - 130px);
+	margin: 9px;	
 	position: relative;
 	transform: scale(1);
 	transform-style: preserve-3d;
 	transition: transform .5s;
-	box-shadow: 1px 1px 1px maroon;
+	box-shadow: 1px 1px 1px rgb(134,31,65);
+	flex: 25%;
+  	max-width: 24%;
+  	padding: 2px;
 }
 .memory-card:active {
   transform: scale(0.97);
@@ -35,15 +45,24 @@ body{
 .memory-card.flip {
   transform: rotateY(180deg);
 }
+/*This is for the cards when they are facing the front side i.e. before flipping.*/
+.front-facing{
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	position: absolute;
+	border-radius: 3px;
+	background: gainsboro;
+	backface-visibility: hidden;
+}
 
-.front-facing
 .back-facing{
 	width: 100%;
 	height: 100%;
 	padding: 20px;
 	position: absolute;
 	border-radius: 5px;
-	background: maroon;
+	background: rgb(232, 119, 34);
 	backface-visibility: hidden;
 }
 .front-facing{
